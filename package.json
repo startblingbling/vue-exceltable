@@ -1,5 +1,5 @@
 {
-  "name": "vue-exceltable",
+  "name": "vue-elementui-exceltable",
   "version": "1.0.0",
   "description": "An editable table component for Vue",
   "author": {
@@ -13,7 +13,12 @@
     "type": "git",
     "url": "https://github.com/startblingbling/vue-exceltable.git"
   },
-  "keywords": ["vue-exceltable", "vue editable table", "vue component", "vue"],
+  "keywords": [
+    "vue-exceltable",
+    "vue editable table",
+    "vue component",
+    "vue"
+  ],
   "scripts": {
     "start": "npm run dev",
     "dev": "node build/devServer.js",
@@ -81,5 +86,9 @@
     "node": ">= 10.13.0",
     "npm": ">= 6.4.1"
   },
-  "browserslist": ["> 1%", "last 2 versions", "not ie <= 9"]
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 9"
+  ]
 }
