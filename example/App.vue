@@ -5,7 +5,7 @@
       <h3>
         本页代码实现可查看
         <a
-          href="https://github.com/KevinMint55/vue-willtable/tree/master/example"
+          href="https://github.com/KevinMint55/vue-elementui-exceltable/tree/master/example"
           target="blank"
           >example</a
         >
@@ -49,8 +49,8 @@
 import axios from 'axios'
 import { checkbox } from 'element-ui'
 import Willtable from '../src/components/Table.vue'
-// import Willtable from '../dist/vue-willtable.min';
-// import '../dist/vue-willtable.min.css';
+// import Willtable from '../dist/vue-elementui-exceltable.min';
+// import '../dist/vue-elementui-exceltable.min.css';
 
 export default {
   name: 'App',
@@ -436,7 +436,7 @@ export default {
       )
     },
     linkGithub () {
-      window.open('https://github.com/KevinMint55/vue-willtable', '_blank')
+      window.open('https://github.com/KevinMint55/vue-elementui-exceltable', '_blank')
     }
   }
 }

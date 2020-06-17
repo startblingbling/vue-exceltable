@@ -15,7 +15,7 @@ module.exports = {
   release: {
     assetsRoot: path.resolve(__dirname, './dist'),
     assetsPublicPath: './',
-    filename: 'vue-willtable',
-    library: 'VueWilltable'
+    filename: 'vue-elementui-exceltable',
+    library: 'VueElementuiExceltable'
   }
 }

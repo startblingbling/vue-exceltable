@@ -96,7 +96,7 @@ import Dropdown from './TableDropdown.vue'
 import Scroll from './TableScroll.vue'
 
 export default {
-  name: 'vue-willtable',
+  name: 'vue-elementui-exceltable',
   directives: { clickoutside },
   components: {
     TableHeader,

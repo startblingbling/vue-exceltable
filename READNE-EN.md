@@ -1,6 +1,6 @@
-# vue-willtable Editable table component
+# vue-elementui-exceltable Editable table component
 
-[中文文档](https://github.com/KevinMint55/vue-willtable/blob/master/README.md)
+[中文文档](https://github.com/KevinMint55/vue-elementui-exceltable/blob/master/README.md)
 
 An editable table component for vue，support mutiple shortcut keys，mimic the similar operations in Excel
 
@@ -41,7 +41,7 @@ Multi-person real-time online editing table system based on this component:
 ## Installation
 
 ```
-npm install vue-willtable --save
+npm install vue-elementui-exceltable --save
 ```
 
 ## Mount
@@ -50,25 +50,25 @@ npm install vue-willtable --save
 
 ``` javascript
 import Vue from 'vue'
-import VueWilltable from 'vue-willtable'
+import VueElementuiExceltable from 'vue-elementui-exceltable'
 
 // require styles
-import 'vue-willtable/dist/vue-willtable.min.css'
+import 'vue-elementui-exceltable/dist/vue-elementui-exceltable.min.css'
 
-Vue.component('VueWilltable', VueWilltable)
+Vue.component('VueElementuiExceltable', VueElementuiExceltable)
 ```
 
 ### mount with component
 
 ``` javascript
-import VueWilltable from 'vue-willtable'
+import VueElementuiExceltable from 'vue-elementui-exceltable'
 
 // require styles
-import 'vue-willtable/dist/vue-willtable.min.css'
+import 'vue-elementui-exceltable/dist/vue-elementui-exceltable.min.css'
 
 export default {
   components: {
-    VueWilltable
+    VueElementuiExceltable
   }
 }
 ```

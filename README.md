@@ -1,6 +1,6 @@
-# vue-willtable 可编辑的表格组件
+# vue-elementui-exceltable 可编辑的表格组件
 
-[English document](https://github.com/KevinMint55/vue-willtable/blob/master/READNE-EN.md)
+[English document](https://github.com/KevinMint55/vue-elementui-exceltable/blob/master/READNE-EN.md)
 
 适用于 Vue 的可编辑的表格组件，支持多种快捷键操作，模拟 Excel 的操作体验
 
@@ -20,14 +20,14 @@ Demo here: https://demo.willwuwei.com/willtable/
 - 修改 date,month,select,cascader 使用时，均需要两个单元格，前一个单元格展示选中的文本，后一个单元格不展示存放选中的 value 值
 - 示例 ：{
   title: '日期',
-  key: 'date',
+  key: 'dateLabel',
   type: 'date',
   width: 100,
   show: true
   },
   {
   title: '日期',
-  key: 'dateValue',
+  key: 'date',
   width: 0,
   show: false
   },
@@ -59,7 +59,7 @@ Demo here: https://demo.willwuwei.com/willtable/
 ## 安装
 
 ```
-npm install vue-willtable --save
+npm install vue-elementui-exceltable --save
 ```
 
 ## 挂载
@@ -68,25 +68,25 @@ npm install vue-willtable --save
 
 ```javascript
 import Vue from 'vue'
-import VueWilltable from 'vue-willtable'
+import VueElementuiExceltable from 'vue-elementui-exceltable'
 
 // require styles
-import 'vue-willtable/dist/vue-willtable.min.css'
+import 'vue-elementui-exceltable/dist/vue-elementui-exceltable.min.css'
 
-Vue.component('VueWilltable', VueWilltable)
+Vue.component('VueElementuiExceltable', VueElementuiExceltable)
 ```
 
 ### 挂载在组件
 
 ```javascript
-import VueWilltable from 'vue-willtable'
+import VueElementuiExceltable from 'vue-elementui-exceltable'
 
 // require styles
-import 'vue-willtable/dist/vue-willtable.min.css'
+import 'vue-elementui-exceltable/dist/vue-elementui-exceltable.min.css'
 
 export default {
   components: {
-    VueWilltable
+    VueElementuiExceltable
   }
 }
 ```

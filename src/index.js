@@ -1,7 +1,7 @@
-import VueWilltable from './components/Table.vue';
+import VueElementuiExceltable from './components/Table.vue';
 
 const install = (Vue) => {
-  Vue.component(VueWilltable.name, VueWilltable);
+  Vue.component(VueElementuiExceltable.name, VueElementuiExceltable);
 };
 
 /* 支持使用标签的方式引入 */
@@ -11,7 +11,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 export {
   install,
-  VueWilltable,
+  VueElementuiExceltable,
 };
 
-export default VueWilltable;
+export default VueElementuiExceltable;
