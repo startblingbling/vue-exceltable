@@ -19,7 +19,7 @@ module.exports = {
   },
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'no-// debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'no-': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'linebreak-style': 'off',
     'no-mixed-operators': 'off',
     'max-len': [1, 300],

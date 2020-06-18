@@ -198,6 +198,12 @@ export default {
           show: false
         },
         {
+          title: '测试',
+          key: 'dateValue',
+          width: 100,
+          show: true
+        },
+        {
           title: '类别',
           key: 'classifyLabel',
           type: 'cascader',
@@ -283,29 +289,33 @@ export default {
         },
         {
           title: '工作岗位',
-          key: 'email',
+          key: 'test',
           width: 300,
           type: 'select',
           isMultiple: true,
           show: true,
           options: [
             {
-              value: 1,
-              label: 'Web前端开发'
+              id: 1,
+              name: 'Web前端开发'
             },
             {
-              value: 2,
-              label: 'Java开发'
+              id: 2,
+              name: 'Java开发'
             },
             {
-              value: 3,
-              label: 'Python开发'
+              id: 3,
+              name: 'Python开发'
             },
             {
-              value: 4,
-              label: 'Php开发'
+              id: 4,
+              name: 'Php开发'
             }
-          ]
+          ],
+          selectProps: {
+            label: 'name',
+            value: 'id'
+          }
         },
         {
           title: '工作岗位1',
@@ -436,7 +446,10 @@ export default {
       )
     },
     linkGithub () {
-      window.open('https://github.com/KevinMint55/vue-elementui-exceltable', '_blank')
+      window.open(
+        'https://github.com/KevinMint55/vue-elementui-exceltable',
+        '_blank'
+      )
     }
   }
 }

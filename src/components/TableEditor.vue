@@ -60,15 +60,15 @@
           v-model="editContent"
           :style="{ width: `${editor.curEditorWidth}px` }"
           v-else-if="editor.editType === 'select'"
-          :multiple="editor.isMultiple"
+          :multiple="editor.selectProps.multiple"
           placeholder="请选择"
           clearable
         >
           <el-option
             v-for="item in editor.options"
-            :value="item.value"
-            :key="item.value"
-            :label="item.label"
+            :value="item[editor.selectProps.value]"
+            :key="item[editor.selectProps.value]"
+            :label="item[editor.selectProps.label]"
           >
           </el-option>
         </el-select>
@@ -81,6 +81,7 @@
         >
         </textarea>
         <el-cascader
+          size="mini"
           ref="cascader"
           :style="{ width: `${editor.curEditorWidth}px` }"
           v-else-if="editor.editType === 'cascader'"
@@ -291,11 +292,9 @@ export default {
       return this.store.states.rowHeight
     },
     columns () {
-      console.log(this.store.states.columns)
       return this.store.states.columns
     },
     editor () {
-      console.log(this.store.states.editor)
       return this.store.states.editor
     },
     selector () {

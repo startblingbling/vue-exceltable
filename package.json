@@ -1,13 +1,13 @@
 {
   "name": "vue-elementui-exceltable",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "description": "An editable table component for Vue",
   "author": {
     "name": "LiuXin",
     "email": "liuxin_0w0@163.com"
   },
   "private": false,
-  "main": "dist/vue-exceltable.min.js",
+  "main": "dist/vue-elementui-exceltable.min.js",
   "license": "MIT",
   "repository": {
     "type": "git",

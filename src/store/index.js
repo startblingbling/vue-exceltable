@@ -38,8 +38,12 @@ class TableStore {
         editType: 'text',
         options: [],
         curEditorWidth: 80,
-        isMultiple: false,
         cascaderProps: {
+          multiple: true,
+          label: 'name',
+          value: 'id'
+        },
+        selectProps: {
           multiple: true,
           label: 'name',
           value: 'id'
@@ -166,6 +170,7 @@ class TableStore {
       // case 'select':
       //   break;
       case 'cascader':
+
         text.forEach(item => {
           if (item.children.length === 0) {
             checkedList.push(item.label)
@@ -177,6 +182,7 @@ class TableStore {
         ] = val;
         break;
       case 'select':
+
         text.forEach(item => {
           checkedList.push(item.label)
         })
@@ -187,7 +193,7 @@ class TableStore {
         break;
       case 'date':
       case 'month':
-        // debugger
+
         editContent = text;
         states.showData[states.editor.editorYIndex][
           states.columns[states.editor.editorXIndex + 1].key
@@ -195,6 +201,7 @@ class TableStore {
         break;
       default: editContent = text
     }
+
     states.showData[states.editor.editorYIndex][
       states.columns[states.editor.editorXIndex].key
     ] = editContent;

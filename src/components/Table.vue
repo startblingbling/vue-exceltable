@@ -441,14 +441,13 @@ export default {
       this.$nextTick(() => {
         states.editor.editorXIndex = x
         states.editor.editorYIndex = y
-        // // debugger
+
         states.editor.curEditorCoverValue =
           states.showData[states.editor.editorYIndex][
             states.columns[states.editor.editorXIndex].key
           ]
         this.$nextTick(() => {
           this.adjustPosition()
-
           this.$refs.editor.$refs.clipboard.focus()
         })
       })
@@ -696,7 +695,6 @@ export default {
           states.columns[states.editor.editorXIndex].options
       }
       this.$nextTick(() => {
-        // debugger
         if (states.editor.editType !== 'cascader') {
           this.$refs.editor.$refs[states.editor.editType].focus()
         }
