@@ -289,7 +289,7 @@ export default {
         },
         {
           title: '工作岗位',
-          key: 'test',
+          key: 'email',
           width: 300,
           type: 'select',
           isMultiple: true,
@@ -410,6 +410,7 @@ export default {
           this.$refs.willtable.setData(res.data.list)
         })
         .catch(() => {})
+      // this.$refs.willtable.setData([])
     },
     getErrorRows () {
       console.log(this.$refs.willtable.getErrorRows())

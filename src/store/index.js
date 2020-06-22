@@ -222,6 +222,7 @@ class TableStore {
   }
 
   autofillUp() {
+    debugger
     const { states } = this;
     if (states.autofill.autofillYArr[1] > states.selector.selectedYArr[1]) {
       for (
@@ -241,6 +242,13 @@ class TableStore {
             ] = states.showData[states.selector.selectedYArr[1]][
               states.columns[j + states.selector.selectedXArr[0]].key
               ];
+            if (states.columns[j + states.selector.selectedXArr[0]].type === 'cascader' || states.columns[j + states.selector.selectedXArr[0]].type === 'select' || states.columns[j + states.selector.selectedXArr[0]].type === 'date' || states.columns[j + states.selector.selectedXArr[0]].type === 'month') {
+              states.showData[i + states.autofill.autofillYArr[0]][
+                states.columns[j + states.selector.selectedXArr[0] + 1].key
+              ] = states.showData[states.selector.selectedYArr[1]][
+                states.columns[j + states.selector.selectedXArr[0] + 1].key
+                ];
+            }
           }
         }
       }
