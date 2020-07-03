@@ -95,132 +95,271 @@ export default {
 
 ```vue
 <template>
-  <willtable
-    ref="willtable"
+  <vue-elementui-exceltable
+    ref="willtables"
     :columns="columns"
     v-model="data"
-    maxHeight="800"
-  />
+    :showIcon="showIcon"
+    @selection-change="selectionChange"
+    :maxHeight="maxHeight"
+    :disabled="disabled"
+    :cellStyle="cellStyle"
+    :cellClassName="cellClassName"
+    :rowHeight="rowHeight"
+  >
+  </vue-elementui-exceltable>
 </template>
-
 <script>
 export default {
-  data() {
-    return {
-      columns: [
-        {
-          type: 'selection',
-          width: 40,
-          fixed: true,
-        },
-        {
-          title: '序号',
-          key: 'sid',
-          fixed: true,
-          type: 'number',
-          width: 100,
-        },
-        {
-          title: '姓名',
-          key: 'name',
-          fixed: true,
-          width: 120,
-        },
-        {
-          title: '日期',
-          key: 'date',
-          type: 'date',
-          width: 100,
-        },
-        {
-          title: '工作岗位',
-          key: 'email',
-          width: 300,
-          type: 'select',
-          options: [
-            {
-              value: 'Web前端开发',
-              label: 'Web前端开发',
-            },
-            {
-              value: 'Java开发',
-              label: 'Java开发',
-            },
-            {
-              value: 'Python开发',
-              label: 'Python开发',
-            },
-            {
-              value: 'Php开发',
-              label: 'Php开发',
-            },
-          ],
-        },
-        {
-          title: '月份',
-          key: 'month',
-          type: 'month',
-          width: 100,
-        },
-        {
-          title: '地址',
-          key: 'address',
-          width: 200,
-        },
-        {
-          title: '标题',
-          key: 'title',
-          width: 300,
-        },
-        {
-          title: '内容',
-          key: 'paragraph',
-          width: 300,
-        },
-        {
-          title: '链接',
-          key: 'url',
-          width: 200,
-        },
-        {
-          title: 'ip',
-          key: 'ip',
-          width: 200,
-          validate: (value) => {
-            const pattern = /((2(5[0-5]|[0-4]\d))|[0-1]?\d{1,2})(\.((2(5[0-5]|[0-4]\d))|[0-1]?\d{1,2})){3}/g;
-            return pattern.test(value);
-          },
-        },
-        {
-          title: '总金额',
-          key: 'sum',
-          width: 200,
-        },
-        {
-          title: 'ID',
-          key: 'id',
-          width: 200,
-        },
-        {
-          title: '色值',
-          key: 'color',
-          width: 200,
-        },
-      ],
-      data: [],
+  props: {
+    columns: {
+      type: Object,
+      required: true
     },
+    data: {
+      type: Array,
+      required: true
+    },
+    maxHeight: {
+      type: Number,
+      default: 800,
+      required: false
+    },
+    showIcon: {
+      type: Boolean,
+      default: () => {
+        return true
+      },
+      required: false
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
+      required: false
+    },
+    cellStyle: {
+      type: Function,
+      default: () => {},
+      required: false
+    },
+    cellClassName: {
+      type: Function,
+      default: () => {},
+      required: false
+    },
+    rowHeight: {
+      type: Number,
+      default: 28,
+      required: false
+    }
   },
-  mounted() {
-    this.getData();
+  data () {
+    return {}
   },
   methods: {
-    getData() {
-      const data = [];
-      this.$refs.willtable.setData(data);
+    getData () {
+      const data = [
+        {
+          titleEn: '',
+          titleCn: '',
+          publisherEn: '',
+          publisherCn: '',
+          authorEn: '',
+          authorCn: '',
+          isbn: '',
+          copyStatus: '',
+          pubDate: '',
+          pageNum: '',
+          format: '',
+          edition: '',
+          series: '',
+          classify: '',
+          lang: '',
+          country: ''
+        },
+        {
+          titleEn: '',
+          titleCn: '',
+          publisherEn: '',
+          publisherCn: '',
+          authorEn: '',
+          authorCn: '',
+          isbn: '',
+          copyStatus: '',
+          pubDate: '',
+          pageNum: '',
+          format: '',
+          edition: '',
+          series: '',
+          classify: '',
+          lang: '',
+          country: ''
+        },
+        {
+          titleEn: '',
+          titleCn: '',
+          publisherEn: '',
+          publisherCn: '',
+          authorEn: '',
+          authorCn: '',
+          isbn: '',
+          copyStatus: '',
+          pubDate: '',
+          pageNum: '',
+          format: '',
+          edition: '',
+          series: '',
+          classify: '',
+          lang: '',
+          country: ''
+        },
+        {
+          titleEn: '',
+          titleCn: '',
+          publisherEn: '',
+          publisherCn: '',
+          authorEn: '',
+          authorCn: '',
+          isbn: '',
+          copyStatus: '',
+          pubDate: '',
+          pageNum: '',
+          format: '',
+          edition: '',
+          series: '',
+          classify: '',
+          lang: '',
+          country: ''
+        },
+        {
+          titleEn: '',
+          titleCn: '',
+          publisherEn: '',
+          publisherCn: '',
+          authorEn: '',
+          authorCn: '',
+          isbn: '',
+          copyStatus: '',
+          pubDate: '',
+          pageNum: '',
+          format: '',
+          edition: '',
+          series: '',
+          classify: '',
+          lang: '',
+          country: ''
+        },
+        {
+          titleEn: '',
+          titleCn: '',
+          publisherEn: '',
+          publisherCn: '',
+          authorEn: '',
+          authorCn: '',
+          isbn: '',
+          copyStatus: '',
+          pubDate: '',
+          pageNum: '',
+          format: '',
+          edition: '',
+          series: '',
+          classify: '',
+          lang: '',
+          country: ''
+        },
+        {
+          titleEn: '',
+          titleCn: '',
+          publisherEn: '',
+          publisherCn: '',
+          authorEn: '',
+          authorCn: '',
+          isbn: '',
+          copyStatus: '',
+          pubDate: '',
+          pageNum: '',
+          format: '',
+          edition: '',
+          series: '',
+          classify: '',
+          lang: '',
+          country: ''
+        },
+        {
+          titleEn: '',
+          titleCn: '',
+          publisherEn: '',
+          publisherCn: '',
+          authorEn: '',
+          authorCn: '',
+          isbn: '',
+          copyStatus: '',
+          pubDate: '',
+          pageNum: '',
+          format: '',
+          edition: '',
+          series: '',
+          classify: '',
+          lang: '',
+          country: ''
+        },
+        {
+          titleEn: '',
+          titleCn: '',
+          publisherEn: '',
+          publisherCn: '',
+          authorEn: '',
+          authorCn: '',
+          isbn: '',
+          copyStatus: '',
+          pubDate: '',
+          pageNum: '',
+          format: '',
+          edition: '',
+          series: '',
+          classify: '',
+          lang: '',
+          country: ''
+        },
+        {
+          titleEn: '',
+          titleCn: '',
+          publisherEn: '',
+          publisherCn: '',
+          authorEn: '',
+          authorCn: '',
+          isbn: '',
+          copyStatus: '',
+          pubDate: '',
+          pageNum: '',
+          format: '',
+          edition: '',
+          series: '',
+          classify: '',
+          lang: '',
+          country: ''
+        }
+      ]
+      this.$refs.willtables.setData(data)
+      window.willtables = this.$refs.willtables
     },
+    selectionChange (selection) {
+      this.selectedIds = selection.map(item => item.id)
+    }
   },
-};
+  mounted () {
+    this.getData()
+    setTimeout(() => {
+      willtables.handleResize()
+    }, 200)
+  },
+  updated () {
+    this.$refs.willtables.data.length === 10 ? () => {} : this.getData()
+    // debugger
+  }
+}
 </script>
+<style lang="scss"></style>
 ```
 
 ### 数据
