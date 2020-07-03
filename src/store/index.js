@@ -45,6 +45,7 @@ class TableStore {
         },
         selectProps: {
           multiple: true,
+          filterable: true,
           label: 'name',
           value: 'id'
         },

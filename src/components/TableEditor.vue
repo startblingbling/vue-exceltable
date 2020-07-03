@@ -61,6 +61,7 @@
           :style="{ width: `${editor.curEditorWidth}px` }"
           v-else-if="editor.editType === 'select'"
           :multiple="editor.selectProps.multiple"
+          :filterable="editor.selectProps.filterable"
           placeholder="请选择"
           clearable
         >
@@ -87,10 +88,12 @@
           v-else-if="editor.editType === 'cascader'"
           :options="editor.options"
           :props="editor.cascaderProps"
+          filterable
           :show-all-levels="false"
           clearable
           collapse-tags
           v-model="editContent"
+          popper-class="excelCascader"
         ></el-cascader>
       </div>
     </div>
@@ -433,5 +436,8 @@ export default {
   &.fixed {
     z-index: 3;
   }
+}
+.excelCascader {
+  z-index: 10001 !important;
 }
 </style>
