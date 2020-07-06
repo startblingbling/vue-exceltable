@@ -278,7 +278,8 @@ export default {
           cascaderProps: {
             multiple: true,
             label: 'name',
-            value: 'id'
+            value: 'id',
+            placeholder: 'multipule'
           }
         },
         {
@@ -292,7 +293,6 @@ export default {
           key: 'email',
           width: 300,
           type: 'select',
-          isMultiple: true,
           show: true,
           options: [
             {
@@ -313,8 +313,10 @@ export default {
             }
           ],
           selectProps: {
+            multiple: true,
             label: 'name',
-            value: 'id'
+            value: 'id',
+            placeholder: '请选择'
           }
         },
         {

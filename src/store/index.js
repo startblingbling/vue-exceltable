@@ -41,13 +41,14 @@ class TableStore {
         cascaderProps: {
           multiple: true,
           label: 'name',
-          value: 'id'
+          value: 'id',
+          placeholder: "请选择"
         },
         selectProps: {
           multiple: true,
-          filterable: true,
           label: 'name',
-          value: 'id'
+          value: 'id',
+          placeholder: "请选择"
         },
       },
 
@@ -223,7 +224,6 @@ class TableStore {
   }
 
   autofillUp() {
-    debugger
     const { states } = this;
     if (states.autofill.autofillYArr[1] > states.selector.selectedYArr[1]) {
       for (

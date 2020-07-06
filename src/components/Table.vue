@@ -683,8 +683,8 @@ export default {
       }
       states.editor.editing = true
       if (states.editor.editType === 'select') {
-        states.editor.isMultiple =
-          states.columns[states.editor.editorXIndex].isMultiple
+        states.editor.selectProps =
+          states.columns[states.editor.editorXIndex].selectProps
         states.editor.options =
           states.columns[states.editor.editorXIndex].options
       }
