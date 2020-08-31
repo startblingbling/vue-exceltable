@@ -1,42 +1,32 @@
 # vue-elementui-exceltable Editable table component
 
-[中文文档](https://github.com/KevinMint55/vue-elementui-exceltable/blob/master/README.md)
+Made some changes based on the vue-willtable table
 
-An editable table component for vue，support mutiple shortcut keys，mimic the similar operations in Excel
+[vue-willtable 项目地址]（https://github.com/KevinMint55/vue-willtable)
 
-Demo here: https://demo.willwuwei.com/willtable/
+vue-willtable Author
 
-Multi-person real-time online editing table system based on this component: 
+[WillWu](https://www.willwuwei.com)
 
-[website URL](https://castle.willwuwei.com)
+## modify
 
-[Front-end project URL](https://github.com/KevinMint55/vue-castle)
-
-[Back-end project URL](https://github.com/KevinMint55/node-castle)
-
-## ScreenShot
-
-![image](https://qiniu.willwuwei.com/willtable1.gif)
-
-![image](https://qiniu.willwuwei.com/willtable2.gif)
-
-## Features
-
-- Table width adjustment
-- Fix table columns
-- Data filtering and sorting
-- select mutiple rows
-- Batch delete, copy and paste 
-- Can copy and paste with Excel
-- Drop down to copy the data
-- The table scrolls automatically when multiple cells are selected
-- Get the changed data row
-- Multiple data type validation
-- Support custom rule data verification
-- Obtain illegal rows after data verification
-- Support undo and redo
-- Each cell style and class name can be customized
-- Use partial rendering, support the display of larger amounts of data
+- Add cascader
+- Modify :When using date, month, select, and cascader, two cells are required. The first cell displays the selected text, and the latter cell does not display the selected value.
+- example ：{
+  title: 'date',
+  key: 'dateLabel',
+  type: 'date',
+  width: 100,
+  show: true,
+  requiredIcon: true //table-header add \*，the cell is required
+  },
+  {
+  title: 'date',
+  key: 'date',
+  width: 0,
+  show: false
+  },
+- After editing the cell, when the cell does not lose focus, call this.$refs.vueElementuiExceltable.$refs.willtables.clickoutside(), the table data at this time will contain the cell data that has just been edited
 
 ## Installation
 
@@ -48,7 +38,7 @@ npm install vue-elementui-exceltable --save
 
 ### mount with global
 
-``` javascript
+```javascript
 import Vue from 'vue'
 import VueElementuiExceltable from 'vue-elementui-exceltable'
 
@@ -60,7 +50,7 @@ Vue.component('VueElementuiExceltable', VueElementuiExceltable)
 
 ### mount with component
 
-``` javascript
+```javascript
 import VueElementuiExceltable from 'vue-elementui-exceltable'
 
 // require styles
@@ -81,7 +71,8 @@ export default {
     ref="willtable"
     :columns="columns"
     v-model="data"
-    maxHeight="800" />
+    maxHeight="800"
+  />
 </template>
 
 <script>
@@ -204,71 +195,71 @@ export default {
 </script>
 ```
 
-### Data 
+### Data
 
-this.$refs.willtable call the setData method to update the entire table data, and will reset the historical data records.
+this.\$refs.willtable call the setData method to update the entire table data, and will reset the historical data records.
 
-this.$refs.willtable call the getData method to get the entire table data.
+this.\$refs.willtable call the getData method to get the entire table data.
 
 `v-model`Value-Binding
 
 ### Attributes
 
-parameter | Explanation | Type | Optional value | Default value
----|---|---|---|---
-columns | Table column configuration description | Array | —— | []
-maxHeight | Max height of column | string / number  | —— | ——
-rowHeight | Height per row | string / number | —— | ——
-disabled | Whether to prohibit editing | Boolean  | —— | true
-showIcon | Whether to display the header icon | Boolean  | —— | false
-cellStyle | callback method of cell's style | Function({row, column, rowIndex, columnIndex}) | —— | ——
-cellClassName | callback method of cell's classname | Function({row, column, rowIndex, columnIndex})  | —— | ——
+| parameter     | Explanation                            | Type                                           | Optional value | Default value |
+| ------------- | -------------------------------------- | ---------------------------------------------- | -------------- | ------------- |
+| columns       | Table column configuration description | Array                                          | ——             | []            |
+| maxHeight     | Max height of column                   | string / number                                | ——             | ——            |
+| rowHeight     | Height per row                         | string / number                                | ——             | ——            |
+| disabled      | Whether to prohibit editing            | Boolean                                        | ——             | true          |
+| showIcon      | Whether to display the header icon     | Boolean                                        | ——             | false         |
+| cellStyle     | callback method of cell's style        | Function({row, column, rowIndex, columnIndex}) | ——             | ——            |
+| cellClassName | callback method of cell's classname    | Function({row, column, rowIndex, columnIndex}) | ——             | ——            |
 
 ### Events
 
-Event name | Explanation | callback parameter
----|---|---
-selection-change | trigger event when the selection changes | selection
+| Event name       | Explanation                              | callback parameter |
+| ---------------- | ---------------------------------------- | ------------------ |
+| selection-change | trigger event when the selection changes | selection          |
 
 ### Methods
 
-Name | Explanation | parameter
----|---|---
-getData | Return the current table data | ——
-setData | set the data and reset the historical data records | data 
-getChangeData | Get changed rows | ——
-getErrorRows | Get data and its index that doesn't pass the verification | ——
-addItem | Add a row of data to the bottom | item
-removeItems | delete, the key is the unique identification attribute of each row, such as id, and the values are the array of the identification attribute | key, values
+| Name          | Explanation                                                                                                                                  | parameter   |
+| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| getData       | Return the current table data                                                                                                                | ——          |
+| setData       | set the data and reset the historical data records                                                                                           | data        |
+| getChangeData | Get changed rows                                                                                                                             | ——          |
+| getErrorRows  | Get data and its index that doesn't pass the verification                                                                                    | ——          |
+| addItem       | Add a row of data to the bottom                                                                                                              | item        |
+| removeItems   | delete, the key is the unique identification attribute of each row, such as id, and the values are the array of the identification attribute | key, values |
 
 ### Columns-Attributes
 
-parameter | Explanation | Type | Optional value | Default value
----|---|---|---|---
-key | fieldName | String | —— | ——
-title | display text | String | —— | ——
-width | width | String / Number | —— | ——
-type | type | String | selection/number/date/select/month | ——
-format | Thousand semicolon format(for number type) | Boolean | —— | true
-options | select drop-down options | Array | { value: 'value', label: 'text' } | ——
-fixed | Whether fixed on the left | Boolean | —— | false
-action | Whether to enable filtering and sorting | Boolean | —— | false
-disabled | Whether to disable editing | Boolean | —— | false
-noVerify | Whether to disable verification | Boolean | —— | false
-validate | self-defined verification | Function(value) | —— | ——
+| parameter | Explanation                                | Type            | Optional value                     | Default value |
+| --------- | ------------------------------------------ | --------------- | ---------------------------------- | ------------- |
+| key       | fieldName                                  | String          | ——                                 | ——            |
+| title     | display text                               | String          | ——                                 | ——            |
+| width     | width                                      | String / Number | ——                                 | ——            |
+| type      | type                                       | String          | selection/number/date/select/month | ——            |
+| format    | Thousand semicolon format(for number type) | Boolean         | ——                                 | true          |
+| options   | select drop-down options                   | Array           | { value: 'value', label: 'text' }  | ——            |
+| fixed     | Whether fixed on the left                  | Boolean         | ——                                 | false         |
+| action    | Whether to enable filtering and sorting    | Boolean         | ——                                 | false         |
+| disabled  | Whether to disable editing                 | Boolean         | ——                                 | false         |
+| noVerify  | Whether to disable verification            | Boolean         | ——                                 | false         |
+| validate  | self-defined verification                  | Function(value) | ——                                 | ——            |
 
 ### Shortcut
 
-Shortcut keys | Explanation
----|---
-Arrow key | Move the edit box
-Ctrl + C | Paste
-Ctrl + V | Copy
-Ctrl + A | Select all cells
-Ctrl + Z | Undo
-Ctrl + Y | Redo
-Enter | Cell editing / complete cell editing
-Delete、Backspace | Delete
+| Shortcut keys     | Explanation                          |
+| ----------------- | ------------------------------------ |
+| Arrow key         | Move the edit box                    |
+| Ctrl + C          | Paste                                |
+| Ctrl + V          | Copy                                 |
+| Ctrl + A          | Select all cells                     |
+| Ctrl + Z          | Undo                                 |
+| Ctrl + Y          | Redo                                 |
+| Enter             | Cell editing / complete cell editing |
+| Delete、Backspace | Delete                               |
 
 ## Author
 

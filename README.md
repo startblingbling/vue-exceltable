@@ -2,7 +2,7 @@
 
 在 vue-willtable 表格的基础上做了些许修改
 
-[原项目地址]（https://github.com/KevinMint55/vue-willtable）
+[vue-willtable 项目地址]（https://github.com/KevinMint55/vue-willtable)
 
 原项目作者
 
