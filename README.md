@@ -1,7 +1,12 @@
 # vue-elementui-exceltable 可编辑的表格组件
 
 在 vue-willtable 表格的基础上做了些许修改
+
 [原项目地址]（https://github.com/KevinMint55/vue-willtable）
+
+原项目作者
+
+[WillWu](https://www.willwuwei.com)
 
 ## 修改
 
@@ -346,6 +351,7 @@ this.\$refs.willtable 调用 getData 方法来获取整表数据.
 | rowHeight     | 每行高度                      | string / number                                | ——     | ——     |
 | disabled      | 是否禁止编辑                  | Boolean                                        | ——     | true   |
 | showIcon      | 是否显示表头类型图标          | Boolean                                        | ——     | false  |
+| requiredIcon  | 是否为必填项                  | Boolean                                        | ——     | false  |
 | cellStyle     | 单元格的 style 的回调方法     | Function({row, column, rowIndex, columnIndex}) | ——     | ——     |
 | cellClassName | 单元格的 className 的回调方法 | Function({row, column, rowIndex, columnIndex}) | ——     | ——     |
 
@@ -394,7 +400,3 @@ this.\$refs.willtable 调用 getData 方法来获取整表数据.
 | Ctrl + Y          | 重做                      |
 | Enter             | 单元格编辑/完成单元格编辑 |
 | Delete、Backspace | 删除                      |
-
-## 作者
-
-[WillWu](https://www.willwuwei.com)
