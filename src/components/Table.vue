@@ -412,9 +412,10 @@ export default {
     clickoutside () {
       const { states } = this.store
       this.$nextTick(() => {
-        states.editor.curEditorCoverValue = states.showData[
-          states.editor.editorYIndex
-        ][states.columns[states.editor.editorXIndex].key].trim()
+        states.editor.curEditorCoverValue =
+          states.showData[states.editor.editorYIndex][
+            states.columns[states.editor.editorXIndex].key
+          ]
       })
       if (states.selector.isSelected || states.autofill.isAutofill) return
       states.editor.editing = false
