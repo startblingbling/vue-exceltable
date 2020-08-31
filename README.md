@@ -1,18 +1,7 @@
 # vue-elementui-exceltable 可编辑的表格组件
 
-[English document](https://github.com/KevinMint55/vue-elementui-exceltable/blob/master/READNE-EN.md)
-
-适用于 Vue 的可编辑的表格组件，支持多种快捷键操作，模拟 Excel 的操作体验
-
-Demo here: https://demo.willwuwei.com/willtable/
-
-基于该组件实现的多人实时共享编辑表格系统:
-
-[访问网址](https://castle.willwuwei.com)
-
-[前端项目地址](https://github.com/KevinMint55/vue-castle)
-
-[后端项目地址](https://github.com/KevinMint55/node-castle)
+在 vue-willtable 表格的基础上做了些许修改
+[原项目地址]（https://github.com/KevinMint55/vue-willtable）
 
 ## 修改
 
@@ -23,7 +12,8 @@ Demo here: https://demo.willwuwei.com/willtable/
   key: 'dateLabel',
   type: 'date',
   width: 100,
-  show: true
+  show: true,
+  requiredIcon: true //表头添加\*，表示必填
   },
   {
   title: '日期',
@@ -31,30 +21,7 @@ Demo here: https://demo.willwuwei.com/willtable/
   width: 0,
   show: false
   },
-
-## 截图
-
-![image](https://qiniu.willwuwei.com/willtable1.gif)
-
-![image](https://qiniu.willwuwei.com/willtable2.gif)
-
-## 特性
-
-- 表格宽度调整
-- 表格列固定
-- 数据筛选与排序
-- 行多选
-- 批量删除与复制粘贴
-- 可与 Excel 互相复制粘贴
-- 数据下拉复制
-- 下拉复制与多选单元格时候表格可自动滚动
-- 获取改变的数据行
-- 多种数据类型校验
-- 支持自定义规则数据校验
-- 获取校验非法的数据行
-- 支持撤销与重做
-- 可自定义每个单元格样式与类名
-- 使用局部渲染，支持更大量数据的展示
+- 单元格编辑完后，在单元格未失去焦点时，调用 this.$refs.vueElementuiExceltable.$refs.willtables.clickoutside()，此时的表格数据中会有刚刚编辑完的单元格数据
 
 ## 安装
 
