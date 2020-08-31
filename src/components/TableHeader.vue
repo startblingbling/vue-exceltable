@@ -44,6 +44,7 @@
           :class="{ active: isActive(columnsStatusList[index]) }"
           v-else
         >
+          <span v-if="th.requiredIcon" class="requiredIcon">*</span>
           <span v-if="showIcon" class="icon" :class="iconClass(th.type)"></span>
           {{ th.title }}
         </p>
@@ -271,7 +272,9 @@ export default {
     white-space: nowrap;
     text-overflow: ellipsis;
   }
-
+  .requiredIcon {
+    color: red !important;
+  }
   .icon {
     display: inline-block;
     width: 14px;

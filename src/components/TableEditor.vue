@@ -310,6 +310,7 @@ export default {
   watch: {
     'editor.editing': {
       handler (val) {
+        // debugger
         if (!val) {
           if (this.columns[this.editor.editorXIndex].type === 'number') {
             this.limitNumber(this.editContent, true)

@@ -175,7 +175,8 @@ export default {
           fixed: true,
           type: 'number',
           width: 100,
-          show: true
+          show: true,
+          requiredIcon: true
         },
         {
           title: '姓名',
